@@ -1,6 +1,8 @@
 import {useState} from "react";
-import {ROUTES} from "./Router.tsx";
+import {ROUTES} from "../Router/Routes.ts";
 import {NavLinkListItem} from "./NavLinkListItem.tsx";
+import './navigation.scss'
+
 function Navigation() {
 
   const [showViewSettings, setShowViewSettings] = useState(false);
@@ -19,7 +21,8 @@ function Navigation() {
             Quiz
           </NavLinkListItem>
           <div className={"spacer"}/>
-          <NavLinkListItem active={showViewSettings} onClick={toggleViewSettings} icon={"material-symbols:styler-outline"}/>
+          <NavLinkListItem active={showViewSettings} onClick={toggleViewSettings}
+                           icon={"material-symbols:styler-outline"}/>
           <NavLinkListItem to={ROUTES.SETTINGS} icon={"material-symbols:settings-outline-rounded"}>
             Settings
           </NavLinkListItem>

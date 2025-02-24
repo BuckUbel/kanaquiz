@@ -3,6 +3,7 @@ nav {
   left: 0;
   top: 0;
   width: calc(100% - 2rem);
+  height: var(--nav-height);
 
   background: var(--navigation-bg-color);
   color: var(--navigation-font-color);
@@ -11,17 +12,18 @@ nav {
 
   .navigation-container {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: var(--width-l);
     text-align: left;
 
     ul {
       margin: 0;
-      padding:0;
+      padding: 0;
       display: flex;
       gap: 32px;
       list-style: none;
     }
-    .spacer{
+
+    .spacer {
       flex: 1;
       border-right: 1px solid var(--navigation-spacer-color);
     }

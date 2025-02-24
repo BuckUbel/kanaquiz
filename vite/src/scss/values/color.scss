@@ -1,7 +1,8 @@
 :root {
   color-scheme: dark light;
 
-  --font-color: rgba(255, 255, 255, 0.87);
+  --font-color: #ffffffdd;
+  --font-disabled-color: #a9a9a9dd;
   --background-color: #242424;
   --border-color: #ededed;
 
@@ -20,8 +21,12 @@
   --color-secondary-darker: #b34440;
   --color-secondary-font: var(--font-color);
 
-
   --color-link: #646cff;
   --color-link-hover: #535bf2;
+
+  --color-success: #2baf00;
+  --color-info: #059abd;
+  --color-warning: #cc4843;
+  --color-error: #9a0905;
 
 }

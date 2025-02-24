@@ -1,5 +1,5 @@
-import Card from "../elements/Card.tsx";
-import {ROUTES} from "../components/routing/Router.tsx";
+import Card from "../elements/Card/Card.tsx";
+import {ROUTES} from "../components/Router/Routes.ts";
 import {Icon} from "@iconify/react";
 import {NavLinkItem} from "../elements/NavLinkItem.tsx";
 import {SimpleKanaDictionary} from "../data/SimpleKanaDictionary.ts";
@@ -8,8 +8,8 @@ function IndexPage() {
 
   return (
     <>
-      <div className={"card-row"}>
-        <Card headline={<div className={"card-row"}>
+      <div className={"container-row"}>
+        <Card headline={<div className={"container-row"}>
           <h2 style={{flex: "1"}}>
             Welcome to Kana Pro 2!
           </h2>
@@ -20,8 +20,8 @@ function IndexPage() {
         </Card>
       </div>
 
-      <div className={"card-row"}>
-        <div className={"card-col"}>
+      <div className={"container-row"}>
+        <div className={"container-col"}>
           <Card headline={<h4>Hiragana · ひらがな</h4>}>
             <p>あ · い · う · え · お</p>
             {Object.values(SimpleKanaDictionary.hiragana).map((kanas)=>{
@@ -35,7 +35,7 @@ function IndexPage() {
             <button>No alternative</button>
           </Card>
         </div>
-        <div className="card-col">
+        <div className="container-col">
           <Card headline={<h4>Katakana · カタカナ</h4>}>
             <p>ア · イ · ウ · エ · オ</p>
             {Object.values(SimpleKanaDictionary.katakana).map((kanas)=>{

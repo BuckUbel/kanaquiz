@@ -1,7 +1,7 @@
 import './scss/app.scss'
-import Router from "./components/routing/Router.tsx";
-import Navigation from "./components/routing/Navigation.tsx";
+import Navigation from "./components/Navigation/Navigation.tsx";
 import {addCustomIcons} from "./helper/customIcons.ts";
+import {Outlet} from "react-router";
 
 addCustomIcons()
 
@@ -11,7 +11,7 @@ function App() {
     <>
       <Navigation/>
       <div className={"app-container"}>
-        <Router/>
+        <Outlet/>
       </div>
     </>
   )

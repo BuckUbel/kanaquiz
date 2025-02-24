@@ -1,5 +1,6 @@
 import * as React from "react";
 import {PropsWithChildren} from "react";
+import "./card.scss";
 
 interface CardProps {
   headline?: React.ReactNode;
