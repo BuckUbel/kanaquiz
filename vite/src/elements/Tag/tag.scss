@@ -4,6 +4,12 @@
   flex-wrap: wrap;
   align-content: flex-start;
 
+  &.with-border {
+    border: 1px solid var(--border-color);
+    padding: 0.25rem;
+    border-radius: 1rem;
+  }
+
   &.inline-tags {
     height: 50px;
     flex-wrap: nowrap;
@@ -24,37 +30,35 @@
     white-space: nowrap;
 
 
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     color: var(--font-color);
-    --tag-color:var(--color-primary);
+    --tag-color: var(--color-primary);
     border-radius: 30px;
     border: 2px solid var(--tag-color);
 
     &.info {
-      --tag-color:var(--color-info);
+      --tag-color: var(--color-info);
       color: var(--color-info);
       border-color: var(--color-info-darker);
     }
 
     &.success {
-      //background: var(--background-color);
-      --tag-color:var(--color-success);
+      --tag-color: var(--color-success);
       color: var(--color-success);
       border-color: var(--color-success-darker);
     }
 
     &.failure {
-      //background: var(--background-color);
-      --tag-color:var(--color-warning);
+      --tag-color: var(--color-warning);
       color: var(--color-warning);
       border-color: var(--color-warning-darker);
     }
 
     transition: background 0.25s, color 0.25s, border-color 0.25s, padding 0.5s;
+
     &.active {
       padding-right: 24px;
       background: var(--tag-color);
-      //border-color: var(--color-tertiary);
       color: var(--font-color);
     }
 
@@ -85,8 +89,8 @@
 
     svg {
       position: absolute;
-      top:2px;
-      right:0;
+      top: 2px;
+      right: 0;
     }
   }
 }
