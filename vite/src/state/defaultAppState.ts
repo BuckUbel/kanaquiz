@@ -5,6 +5,12 @@ export const defaultAppState: AppState = {
     infoMessage: "",
     infoMessageState: "",
     openModal: undefined,
+  },
+  dev:{
+    tag1:false,
+    tag2:false,
+    tag3:false,
+    tag4:false,
   }
 };
 

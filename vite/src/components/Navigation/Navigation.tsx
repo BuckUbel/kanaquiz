@@ -20,6 +20,12 @@ function Navigation() {
           <NavLinkListItem to={ROUTES.QUIZ} icon={"kana-question"}>
             Quiz
           </NavLinkListItem>
+          <div className={"spacer without-border"}/>
+          <div className={"spacer without-border"}/>
+          <div className={"spacer"}/>
+          <NavLinkListItem to={ROUTES.DEV} icon={"material-symbols:deployed-code-alert"}>
+            DEV
+          </NavLinkListItem>
           <div className={"spacer"}/>
           <NavLinkListItem active={showViewSettings} onClick={toggleViewSettings}
                            icon={"material-symbols:styler-outline"}/>

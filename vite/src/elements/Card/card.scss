@@ -1,3 +1,5 @@
+@import '../../scss/values/responsive';
+
 .card {
   flex: 1;
   min-width: calc(210px - 2rem - 2px);
@@ -6,6 +8,17 @@
   border: 1px solid var(--border-color-light);
   border-radius: 4px;
   text-align: left;
+
+
+  &.card-small {
+    max-width: $width-s;
+    @media (max-width: $width-m) {
+      max-width: $width-xs;
+    }
+    @media (max-width: $width-s) {
+      max-width: calc($width-xs / 2);
+    }
+  }
 
   .card-header {
     margin-bottom: 1rem;

@@ -1,8 +1,11 @@
 import React, {FormEvent} from "react";
 
+export type Status = 'success' | 'failure' | 'info';
+
 export type StateSetter<T> = React.Dispatch<React.SetStateAction<T>>;
 export type UseState<T> = [T, StateSetter<T>];
 export type SimpleState<T> = [T, (newValue: T) => void];
+export type SimpleSetState<T> = (newValue: T) => void;
 export type UseAppStateType<T> = [T, (newValue: T) => void, (prevFunction: (prevValue: T) => T) => void];
 export type UseAppStateTypeProps<T> = {
   state: T,

@@ -1,5 +1,7 @@
 export enum ROUTES {
   INDEX = "/",
   QUIZ = "/quiz",
-  SETTINGS = "/settings"
+  SETTINGS = "/settings",
+
+  DEV = "/DEV"
 }

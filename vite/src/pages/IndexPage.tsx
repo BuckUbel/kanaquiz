@@ -13,7 +13,7 @@ function IndexPage() {
           <h2 style={{flex: "1"}}>
             Welcome to Kana Pro 2!
           </h2>
-          <Icon  icon={"kana-question"} width="50" height="50"/>
+          <Icon icon={"kana-question"} width="50" height="50"/>
         </div>
         }>
           <p> Please choose a quiz mode: </p>
@@ -22,13 +22,13 @@ function IndexPage() {
 
       <div className={"container-row"}>
         <div className={"container-col"}>
-          <Card headline={<h4>Hiragana · ひらがな</h4>}>
+          <Card headline={<h4>Hiragana · ひらがな</h4>} small>
             <p>あ · い · う · え · お</p>
-            {Object.values(SimpleKanaDictionary.hiragana).map((kanas)=>{
+            {Object.values(SimpleKanaDictionary.hiragana).map((kanas) => {
               return <p>{Object.keys(kanas)}</p>;
             })}
           </Card>
-          <Card buttonCard>
+          <Card buttonCard small>
             <button className={"active"}>All</button>
             <button>None</button>
             <button>All alternative</button>
@@ -36,13 +36,13 @@ function IndexPage() {
           </Card>
         </div>
         <div className="container-col">
-          <Card headline={<h4>Katakana · カタカナ</h4>}>
+          <Card headline={<h4>Katakana · カタカナ</h4>} small>
             <p>ア · イ · ウ · エ · オ</p>
-            {Object.values(SimpleKanaDictionary.katakana).map((kanas)=>{
+            {Object.values(SimpleKanaDictionary.katakana).map((kanas) => {
               return <p>{Object.keys(kanas)}</p>;
             })}
           </Card>
-          <Card buttonCard>
+          <Card buttonCard small>
             <button>All</button>
             <button>None</button>
             <button>All alternative</button>

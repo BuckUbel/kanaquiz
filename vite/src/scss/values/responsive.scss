@@ -1,7 +1,13 @@
+$width-xl: 1920px;
+$width-l: 1280px;
+$width-m: 960px;
+$width-s: 640px;
+$width-xs: 480px;
+
 :root {
-  --width-xl: 1920;
-  --width-l: 1280;
-  --width-m: 960;
-  --width-s: 600;
-  --width-xs: 480;
+  --width-xl: #{$width-xl};
+  --width-l: #{$width-l};
+  --width-m: #{$width-m};
+  --width-s: #{$width-s};
+  --width-xs: #{$width-xs};
 }

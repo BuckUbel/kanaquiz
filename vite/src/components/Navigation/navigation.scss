@@ -26,6 +26,9 @@ nav {
     .spacer {
       flex: 1;
       border-right: 1px solid var(--navigation-spacer-color);
+      &.without-border {
+        border-right: none;
+      }
     }
   }
 

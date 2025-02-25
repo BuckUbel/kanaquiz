@@ -1,7 +1,7 @@
 import {NavLink, NavLinkProps} from "react-router";
 import * as React from "react";
 import {HTMLAttributes, PropsWithChildren} from "react";
-import {ROUTES} from "../components/routing/Router.tsx";
+import {ROUTES} from "../components/Router/Router.tsx";
 
 export interface NavLinkOptBaseProps extends HTMLAttributes<HTMLAnchorElement> {
   active?: boolean;

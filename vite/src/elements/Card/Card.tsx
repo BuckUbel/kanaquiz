@@ -5,6 +5,7 @@ import "./card.scss";
 interface CardProps {
   headline?: React.ReactNode;
   buttonCard?: boolean;
+  small?: boolean;
 }
 
 function Card(props: PropsWithChildren<CardProps>) {
@@ -14,7 +15,7 @@ function Card(props: PropsWithChildren<CardProps>) {
   if (!!props.buttonCard) bodyClassName += " button-list";
 
   return (
-    <div className={className}>
+    <div className={`${className}${props.small ? " card-small" : ""}`}>
       {!!props.headline && <div className={headerClassName}>
         {props.headline}
       </div>}
