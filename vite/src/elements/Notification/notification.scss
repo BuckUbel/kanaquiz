@@ -1,0 +1,81 @@
+.notification {
+  transition: box-shadow 0.25s, border-radius 0.25s, opacity 0.5s, color 0.5s, height 0.5s, margin 0.5s, padding 0.5s;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 1px;
+  height: 0;
+
+  opacity: 0;
+  margin: 0.5em 0;
+  padding: 0;
+  color: transparent;
+  overflow: hidden;
+
+  &.show-notification {
+    background: var(--font-disabled-color);
+    color: var(--font-color);
+    height: 25px;
+    padding: 0.5em;
+    opacity: 1;
+  }
+
+  &.info {
+    background: var(--background-color);
+    color:  var(--color-info);
+  }
+
+  &.success {
+    background:var(--background-color);
+    color:  var(--color-success);
+  }
+
+  &.failure {
+    background: var(--background-color);
+    color:  var(--color-warning);
+  }
+
+  p {
+    width: calc(100% - 25px);
+    height: 25px;
+    display: inline-block;
+    margin: 0;
+    text-align: left;
+  }
+
+  span {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+
+    svg {
+      transition: margin-top 0.25s, height 0.25s;
+
+      //width: 25px;
+      height: 20px;
+      margin-top: 2.5px;
+    }
+  }
+
+  &.hide-notification {
+    opacity: 0;
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+
+  &:hover {
+    box-shadow: 0 0 8px 1px;
+    cursor: pointer;
+    border-radius: 10px;
+
+    span {
+      svg {
+        margin: 0;
+        height: 25px;
+      }
+    }
+  }
+}

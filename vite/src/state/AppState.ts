@@ -11,5 +11,6 @@ export interface AppState {
     tag2: boolean;
     tag3: boolean;
     tag4: boolean;
+    notificationReload: boolean;
   }
 }

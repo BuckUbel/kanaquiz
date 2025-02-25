@@ -1,14 +1,20 @@
-import {useAppState} from "../../state/useAppState.ts";
 import DEVPageTags from "./DEVPageTags.tsx";
+import DEVPageNotifications from "./DEVPageNotifications.tsx";
+import Card from "../../elements/Card/Card.tsx";
 
 function DEVPage() {
 
   return (
     <>
-      <h2>DEV Page</h2>
       <div className={"container-row"}>
-        <DEVPageTags/>
+      <Card headline={<h2>DEV Page</h2>}/>
       </div>
+        <div className={"container-row"}>
+          <DEVPageTags/>
+        </div>
+        <div className={"container-row"}>
+          <DEVPageNotifications/>
+        </div>
     </>
   )
 }

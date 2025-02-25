@@ -11,6 +11,7 @@ export const defaultAppState: AppState = {
     tag2:false,
     tag3:false,
     tag4:false,
+    notificationReload:false,
   }
 };
 

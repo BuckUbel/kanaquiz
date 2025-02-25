@@ -12,9 +12,9 @@ function DEVPageTags() {
 
   return (
     <>
-      <div className={"container-col"}>
+      <div className={"container-col "}>
         <Card headline={<h3>Tags</h3>} small>
-          <TagsContainer>
+          <TagsContainer className={"with-border"}>
             <Tag active={false}>Off State</Tag>
             <Tag state={tag1State} active={true}>On State</Tag>
             <Tag state={tag2State} status={"info"}>Info Status</Tag>
@@ -22,11 +22,10 @@ function DEVPageTags() {
             <Tag state={tag4State} status={"success"}>Success Status</Tag>
           </TagsContainer>
         </Card>
-
       </div>
       <div className={"container-col"}>
         <Card headline={<h3>Inline Tags</h3>} small>
-          <TagsContainer inline>
+          <TagsContainer className={"with-border"} inline>
             <Tag active={false}>Off State</Tag>
             <Tag state={tag1State} active={true}>On State</Tag>
             <Tag state={tag2State} status={"info"}>Info Status</Tag>
@@ -35,7 +34,6 @@ function DEVPageTags() {
             <Tag status={"success"}>Success Status</Tag>
             <Tag status={"success"}>Success Status</Tag>
             <Tag status={"success"}>Success Status</Tag>
-
           </TagsContainer>
         </Card>
       </div>
