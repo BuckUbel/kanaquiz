@@ -22,9 +22,9 @@
   max-width: var(--width-l);
 
   width: 100vw;
-  height: 100vh;
+  min-height: calc(100vh - (var(--nav-height) + var(--app-vertical-padding) + var(--footer-height) + var(--app-vertical-padding)));
   margin: 0 auto;
-  padding: 5rem 2rem 2rem 2rem;
+  padding: calc(var(--nav-height) + var(--app-vertical-padding)) var(--app-horizontal-padding) calc(var(--footer-height) + var(--app-vertical-padding)) var(--app-horizontal-padding);
   text-align: center;
 }
 
@@ -47,7 +47,7 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4{
+h1, h2, h3, h4 {
   margin: 0;
   font-weight: 500;
   line-height: 1.2;
@@ -69,6 +69,9 @@ h4 {
   font-size: 1.1em;
 }
 
+p {
+  margin: 0;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

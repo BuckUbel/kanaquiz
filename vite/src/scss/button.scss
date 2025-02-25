@@ -1,14 +1,32 @@
+.button-container {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
 button, .button {
   border-radius: 8px;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: normal;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: color 0.2s, background-color 0.4s, border-color 0.4s, box-shadow 0.4s;
+
+  &.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    svg {
+      display: block;
+    }
+  }
+
+  /**
+  COLOR DEFINITIONS
+   */
 
   border: 1px solid var(--border-color);
-  background-color: transparent;
+  background-color: #00000022;
 
   &.active {
     color: var(--color-primary);
@@ -24,6 +42,10 @@ button, .button {
     border-color: var(--color-secondary);
     color: var(--color-secondary);
   }
+  &.tertiary {
+    border-color: var(--color-tertiary);
+    color: var(--color-tertiary);
+  }
 
   &.full-width {
     width: 100%;
@@ -33,11 +55,18 @@ button, .button {
   &:focus,
   &:focus-visible,
   &:hover {
+    color: var(--color-primary);
     box-shadow: 0 0 4px 1px currentColor;
     border-color: var(--color-primary-darker);
 
     &.secondary {
+      color: var(--color-secondary);
       border-color: var(--color-secondary-darker);
+    }
+
+    &.tertiary {
+      color: var(--color-tertiary);
+      border-color: var(--color-tertiary-darker);
     }
   }
 
@@ -48,6 +77,108 @@ button, .button {
 
     &.secondary {
       box-shadow: 0 0 8px 2px var(--color-secondary-darker);
+    }
+  }
+
+  &.greyful {
+    background: radial-gradient(circle,
+            var(--background-color-light) 0%,
+            var(--color-tertiary-darker) 0.1% /* Leichte Tertiärfarbe */
+    ); /* Voller Sekundärfarbe */
+    background-size: 100% 100%;
+    background-position: center;
+
+
+    color: white;
+    box-shadow: 0 0 4px 1px var(--color-primary);
+    border-color: var(--color-primary);
+    border: none;
+    box-shadow: none;
+
+    transition: background-size .8s, background-position 0.2s ease-in-out, border-color 0.4s, color 0.6s;
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+      color: black;
+      //box-shadow: 0 0 4px 1px var(--color-secondary);
+      //border-color: var(--color-secondary);
+      background-size: 100000% 100000%;
+      //background-position: 100% 100%;      /* Kreis wandert in die Ecke */
+
+    }
+  }
+
+  &.colorful {
+    background: radial-gradient(circle,
+            var(--color-secondary-darker) 0%,
+            var(--color-tertiary-darker) 0.1% /* Leichte Tertiärfarbe */
+    ); /* Voller Sekundärfarbe */
+    background-size: 100% 100%;
+    background-position: center;
+
+
+    color: var(--color-primary);
+    box-shadow: 0 0 4px 1px var(--color-primary);
+    border-color: var(--color-primary);
+
+    transition: background-size .8s, background-position 0.2s ease-in-out, border-color 0.4s, color 0.6s;
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+      color: black;
+      box-shadow: 0 0 4px 1px var(--color-secondary);
+      border-color: var(--color-secondary);
+      background-size: 100000% 100000%;
+      //background-position: 100% 100%;      /* Kreis wandert in die Ecke */
+
+    }
+  }
+
+  &.colorful2 {
+    background: linear-gradient(120deg,
+            #333333 0%, /* Schwarz */
+            #777777 50%, /* Mittelgrau */
+
+            var(--color-tertiary-darker) 51%, /* Farbe beginnt */
+            var(--color-secondary-darker) 100%);
+
+    background-size: 400%;
+    background-position: 0% 20%;
+
+    color: var(--color-primary);
+    box-shadow: 0 0 4px 1px var(--color-primary);
+    border-color: var(--color-primary);
+
+    transition: background-position 0.2s ease-in-out, border-color 0.4s, color 0.6s;
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+      color: black;
+      box-shadow: 0 0 4px 1px var(--color-secondary);
+      border-color: var(--color-secondary);
+      background-position: 100% 80%; /* Endposition des Gradients */
+    }
+  }
+
+  &.colorful3 {
+    background-size: 200%;
+    background: linear-gradient(120deg, var(--color-tertiary-darker) 0%, var(--color-secondary-darker) 100%) 0% 50%;
+    transition: background-position 0.5s ease-in-out, color 0.6s;
+    color: var(--color-secondary);
+    box-shadow: 0 0 4px 1px var(--color-tertiary);
+    border-color: var(--color-tertiary);
+
+    &:focus,
+    &:focus-visible,
+    &:hover {
+      //color: black;
+      color: var(--color-tertiary);
+      box-shadow: 0 0 4px 1px var(--color-secondary);
+      border-color: var(--color-secondary);
+      background-position: 100% 50%; /* Endposition des Gradients */
     }
   }
 }

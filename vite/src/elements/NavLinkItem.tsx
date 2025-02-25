@@ -1,7 +1,7 @@
 import {NavLink, NavLinkProps} from "react-router";
 import * as React from "react";
 import {HTMLAttributes, PropsWithChildren} from "react";
-import {ROUTES} from "../components/Router/Router.tsx";
+import {ROUTES} from "../components/Router/Routes.ts";
 
 export interface NavLinkOptBaseProps extends HTMLAttributes<HTMLAnchorElement> {
   active?: boolean;
@@ -10,7 +10,7 @@ export interface NavLinkOptBaseProps extends HTMLAttributes<HTMLAnchorElement> {
 
 
 export type NavLinkOptProps<T> = PropsWithChildren<T & ({ to?: never } | (NavLinkProps & {
-  to: ROUTES
+  to: ROUTES | string;
 }))>;
 
 export function NavLinkItem(props: NavLinkOptProps<NavLinkOptBaseProps>) {

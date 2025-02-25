@@ -7,31 +7,38 @@
   flex-direction: column;
   max-width: var(--width-l);
   gap: 1rem;
+  padding-bottom: 2rem;
 }
 
 .container-col, .container-row {
   flex: 1;
   display: flex;
   gap: 1rem;
+
   &.zero-flex {
     flex: 0;
   }
-  &.with-border{
+
+  &.with-border {
     border: 1px solid var(--border-color);
     padding: 1rem;
     border-radius: 1rem;
+  }
+
+  .spacer {
+    flex: 1;
   }
 }
 
 .container-col {
   flex-direction: column;
 }
+
 .container-row {
   @media (max-width: var(--width-s)) {
     flex-direction: column;
   }
 }
-
 
 
 .button-list {
@@ -45,5 +52,110 @@
     max-width: 500px;
     margin: 0 auto;
     width: 100%;
+  }
+}
+
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem 0.5rem;
+  gap: 5rem;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  }
+
+
+  list-style: none;
+  margin: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    user-select: none;
+    font-size: 1.1rem;
+
+    border: 1px solid currentColor;
+    box-shadow: 0 0 20px 4px currentColor;
+    background: #2c1b1b;
+
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+
+    &#icon-list-vivaldi {
+      color: #ed3939;
+    }
+
+    &#icon-list-phpstorm {
+      color: #7354fc;
+    }
+
+    &#icon-list-typescript {
+      color: #3177c4;
+    }
+
+    &#icon-list-react {
+      color: #00d6fd;
+    }
+
+    &#icon-list-vitejs {
+      color: #eeb938;
+    }
+
+    &#icon-list-iconify {
+      color: #e7e7e7;
+    }
+
+    z-index: 3;
+    transition: box-shadow 0.5s ease-in-out;
+    //filter: saturate(0.5);
+
+    &:hover {
+      z-index: 500;
+      filter: saturate(1.2);
+      box-shadow: 0 0 40px 8px currentColor;
+
+    }
+  }
+}
+
+.technology-icon-list {
+  position: relative;
+  overflow-y: visible;
+  overflow-x: hidden;
+
+  &::after ,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, transparent 5%, var(--background-color-light) 100%);
+    pointer-events: none; // Verhindert Interaktionen
+    z-index: 1; // Weiter oben als die Icons
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to left, transparent 95%, var(--background-color-light) 100%);
+    pointer-events: none; // Verhindert Interaktionen
+    z-index: 1; // Weiter oben als die Icons
   }
 }

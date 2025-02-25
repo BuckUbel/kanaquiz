@@ -1,4 +1,4 @@
-@keyframes logo-spin {
+@keyframes spin {
   from {
     transform: rotate(360deg);
   }
@@ -8,6 +8,247 @@
 }
 
 .spin-animation {
-  animation: logo-spin infinite 10s linear;
+  animation: spin infinite 10s linear;
 }
 
+@keyframes pulsing {
+  0% {
+    transform: scale(1); /* Originalgröße */
+  }
+  50% {
+    transform: scale(1.2); /* Größer, z.B. 120% */
+  }
+  100% {
+    transform: scale(1); /* Zurück zur Originalgröße */
+  }
+}
+
+.pulsing-animation {
+  animation: pulsing 2s infinite ease-in-out
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-16px); /* Etwas nach oben hüpfen */
+  }
+  40% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-8px); /* Kleinerer Bounce */
+  }
+  80% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0); /* Zurück zur Ausgangsposition */
+  }
+}
+
+.bouncing-animation {
+  animation: bouncing 3s infinite ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); /* Ausgangsposition */
+  }
+  25% {
+    transform: translateX(-10px); /* Wackeln nach links */
+  }
+  50% {
+    transform: translateX(10px); /* Wackeln nach rechts */
+  }
+  75% {
+    transform: translateX(-10px); /* Zurück nach links */
+  }
+}
+
+.shake-animation {
+  animation: shake 0.8s infinite ease-in-out;
+}
+
+
+@keyframes wobble {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(5deg); /* Nach rechts kippen */
+  }
+  50% {
+    transform: rotate(-5deg); /* Nach links kippen */
+  }
+  75% {
+    transform: rotate(3deg); /* Ein kleinerer Winkel */
+  }
+}
+
+.wobble-animation {
+  animation: wobble 1.2s infinite ease-in-out;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  25% {
+    transform: translateY(-20px) rotate(10deg); /* Nach oben mit Drehung */
+  }
+  50% {
+    transform: translateY(0) rotate(0); /* Zurück */
+  }
+  75% {
+    transform: translateY(-10px) rotate(-5deg); /* Leichter "Bounce" */
+  }
+}
+
+.jump-animation {
+  animation: jump 2s infinite ease-in-out;
+}
+
+
+$marquee-animation-duration: 30s;
+$marquee-animation-zIndex: 100;
+$marquee-animation-ScaleX: 1.5;
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%) scaleX(1.0);
+    opacity: 1;
+  }
+  47.86% {
+    opacity: 1;
+  }
+  50%{
+    transform: translateX(80%) scaleX(1.0);
+    opacity: 0;
+  }
+  51%{
+    transform: translateX(-80%) scaleX(1.0);
+    opacity: 0;
+  }
+  53.14% {
+    opacity: 1;
+
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%) scale(1.0);
+  }
+}
+
+@mixin marquee-animation-child-style {
+  filter: saturate(1);
+  box-shadow: 0 0 20px 8px currentColor;
+  transform: scale($marquee-animation-ScaleX);
+  z-Index: $marquee-animation-zIndex
+}
+
+@keyframes marquee-1-6 {
+  0% {
+    transform: scale(1.0);
+  }
+  14.28% {
+    @include marquee-animation-child-style;
+  }
+  28.57% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes marquee-2-6 {
+  14.28% {
+    transform: scale(1.0);
+
+  }
+  28.57% {
+    @include marquee-animation-child-style;
+  }
+  42.57% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes marquee-3-6 {
+  28.57% {
+    transform: scale(1.0);
+  }
+  42.57% {
+    @include marquee-animation-child-style;
+  }
+  57.14% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes marquee-4-6 {
+  42.57% {
+    transform: scale(1.0);
+  }
+  57.14% {
+    @include marquee-animation-child-style;
+  }
+  71.42% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes marquee-5-6 {
+  57.14% {
+    transform: scale(1.0);
+
+  }
+  71.42% {
+    @include marquee-animation-child-style;
+  }
+  85.71% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes marquee-6-6 {
+  71.42% {
+    transform: scale(1.0);
+  }
+  85.71% {
+    @include marquee-animation-child-style;
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+.marquee-animation {
+  gap: 5rem;
+  animation: marquee $marquee-animation-duration linear infinite;
+  animation-delay: calc(-0.5 * #{$marquee-animation-duration});
+
+  > :nth-child(1) {
+    animation: marquee-6-6 $marquee-animation-duration linear infinite;
+  }
+
+  > :nth-child(2) {
+    animation: marquee-5-6 $marquee-animation-duration linear infinite;
+  }
+
+  > :nth-child(3) {
+    animation: marquee-4-6 $marquee-animation-duration linear infinite;
+  }
+
+  > :nth-child(4) {
+    animation: marquee-3-6 $marquee-animation-duration linear infinite;
+  }
+
+  > :nth-child(5) {
+    animation: marquee-2-6 $marquee-animation-duration linear infinite;
+  }
+
+  > :nth-child(6) {
+    animation: marquee-1-6 $marquee-animation-duration linear infinite;
+  }
+}

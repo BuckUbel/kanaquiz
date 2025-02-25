@@ -4,7 +4,7 @@ nav {
   top: 0;
   width: calc(100% - 2rem);
   height: var(--nav-height);
-
+  z-index: var(---zIndex-navbar);
   background: var(--navigation-bg-color);
   color: var(--navigation-font-color);
   padding: 1rem;
@@ -26,6 +26,7 @@ nav {
     .spacer {
       flex: 1;
       border-right: 1px solid var(--navigation-spacer-color);
+
       &.without-border {
         border-right: none;
       }

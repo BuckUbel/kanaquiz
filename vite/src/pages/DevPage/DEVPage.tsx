@@ -1,6 +1,8 @@
 import DEVPageTags from "./DEVPageTags.tsx";
 import DEVPageNotifications from "./DEVPageNotifications.tsx";
 import Card from "../../elements/Card/Card.tsx";
+import DEVPageModal from "./DEVPageModal.tsx";
+import DEVPageButtons from "./DEVPageButtons.tsx";
 
 function DEVPage() {
 
@@ -14,6 +16,10 @@ function DEVPage() {
         </div>
         <div className={"container-row"}>
           <DEVPageNotifications/>
+        </div>
+        <div className={"container-row"}>
+          <DEVPageButtons/>
+          <DEVPageModal/>
         </div>
     </>
   )
