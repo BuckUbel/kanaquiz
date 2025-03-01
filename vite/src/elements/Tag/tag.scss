@@ -32,26 +32,41 @@
 
     background: rgba(0, 0, 0, 0.2);
     color: var(--font-color);
-    --tag-color: var(--color-primary);
+    --tag-color: var(--color-primary-darker);
     border-radius: 30px;
     border: 2px solid var(--tag-color);
 
     &.info {
-      --tag-color: var(--color-info);
+      --tag-color: var(--color-info-darker);
       color: var(--color-info);
       border-color: var(--color-info-darker);
     }
 
     &.success {
-      --tag-color: var(--color-success);
+      --tag-color: var(--color-success-darker);
       color: var(--color-success);
       border-color: var(--color-success-darker);
     }
 
     &.failure {
-      --tag-color: var(--color-warning);
+      --tag-color: var(--color-warning-darker);
       color: var(--color-warning);
       border-color: var(--color-warning-darker);
+    }
+    &.primary {
+      --tag-color: var(--color-primary-darker);
+      color: var(--color-primary);
+      border-color: var(--color-primary-darker);
+    }
+    &.secondary {
+      --tag-color: var(--color-secondary-darker);
+      color: var(--color-secondary);
+      border-color: var(--color-secondary-darker);
+    }
+    &.tertiary {
+      --tag-color: var(--color-tertiary-darker);
+      color: var(--color-tertiary);
+      border-color: var(--color-tertiary-darker);
     }
 
     transition: background 0.25s, color 0.25s, border-color 0.25s, padding 0.5s;
@@ -67,30 +82,21 @@
     -webkit-user-select: none;
 
     &:hover {
-      background: var(--background-darker-color);
       color: var(--font-color);
-
-      &.active {
-        background: var(--color-primary);
-      }
-
-      &.info {
-        background: var(--color-info-darker);
-      }
-
-      &.success {
-        background: var(--color-success-darker);
-      }
-
-      &.failure {
-        background: var(--color-warning-darker);
-      }
+      filter: brightness(1.3);
     }
 
     svg {
-      position: absolute;
-      top: 2px;
-      right: 0;
+      width: 15px;
+      height: 15px;
+
+      &.icon-close {
+        position: absolute;
+        top: 2px;
+        right: 0;
+        height: 24px;
+        width: 24px;
+      }
     }
   }
 }
