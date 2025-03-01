@@ -29,5 +29,18 @@ export default tseslint.config(
         },
       ],
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+      import: {
+        alias: {
+          map: [
+            ["@", "./src"]
+          ],
+          extensions: [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    }
   },
 )

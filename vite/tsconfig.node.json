@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // Setzt das Basisverzeichnis des Projekts (meist das Root-Verzeichnis)
+    "paths": {
+      "@/*": ["src/*"] // Deckt alle Importe ab, die von 'src' ausgehen
+    },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
     "lib": ["ES2023"],
