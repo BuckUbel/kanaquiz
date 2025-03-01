@@ -22,10 +22,10 @@ function IndexPage() {
 
       <div className={"container-row"}>
         <div className={"container-col"}>
-          <Card headline={<h4>Hiragana · ひらがな</h4>} small>
+          <Card headline={<h3>Hiragana · ひらがな</h3>} small>
             <p>あ · い · う · え · お</p>
-            {Object.values(SimpleKanaDictionary.hiragana).map((kanas) => {
-              return <p>{Object.keys(kanas)}</p>;
+            {Object.values(SimpleKanaDictionary.hiragana).map((kanas, i) => {
+              return <p key={i}>{Object.keys(kanas)}</p>;
             })}
           </Card>
           <Card buttonCard small>
@@ -36,7 +36,7 @@ function IndexPage() {
           </Card>
         </div>
         <div className="container-col">
-          <Card headline={<h4>Katakana · カタカナ</h4>} small>
+          <Card headline={<h3>Katakana · カタカナ</h3>} small>
             <p>ア · イ · ウ · エ · オ</p>
             {Object.values(SimpleKanaDictionary.katakana).map((kanas) => {
               return <p>{Object.keys(kanas)}</p>;

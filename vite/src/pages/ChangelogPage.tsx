@@ -50,17 +50,32 @@ function ChangelogPage() {
             </ul>
           </div>
         </Card>
+        <Card headline={<h3>V3.0.0-alpha-02</h3>}>
+          <div className={"container-row"}>
+            <p>Implement more components!</p>
+            <div className={"spacer"}/>
+            <i>xx.03.2025</i>
+          </div>
+          <ul>
+            <li>Add some input fields</li>
+            <li>Add new navigation</li>
+            <li>Add modals</li>
+            <li>Add selector</li>
+            <li>Add table</li>
+          </ul>
+        </Card>
         <Card headline={<h3>V3.0.0-alpha-01</h3>}>
           <div className={"container-row"}>
             <p>Implement more components!</p>
             <div className={"spacer"}/>
-            <i>xx.02.2025</i>
+            <i>01.03.2025</i>
           </div>
           <ul>
-            <li>Add some input fields</li>
-            <li>Add modals</li>
-            <li>Add selector</li>
-            <li>Add table</li>
+            <li>Implement dictionary site</li>
+            <li>Add first implementation of char table</li>
+            <li>→First usage of the origional data, the kana dictionary!</li>
+            <li>Add a simple draft of vocabulary UI</li>
+            <li>Add some simple ideas for minigames</li>
           </ul>
         </Card>
         <Card headline={<h3>V3.0.0-alpha-00</h3>}>
