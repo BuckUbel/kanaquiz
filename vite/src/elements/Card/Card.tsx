@@ -1,26 +1,34 @@
 import * as React from "react";
 import {PropsWithChildren} from "react";
 import "./card.scss";
+import {Icon, IconifyIcon} from "@iconify/react";
 
 interface CardProps {
   headline?: React.ReactNode;
+  headlineIcon?: IconifyIcon | string
   buttonCard?: boolean;
   small?: boolean;
+  onClick?: () => void;
+  category?: "primary" | "secondary" | "tertiary";
 }
 
 function Card(props: PropsWithChildren<CardProps>) {
+  const {buttonCard, small, category, headline, headlineIcon, children} = props;
   let className: string = "card";
+  if (category) className += ` card-${category}`;
   let headerClassName: string = "card-header";
   let bodyClassName: string = "card-body";
-  if (!!props.buttonCard) bodyClassName += " button-list";
+  if (!!buttonCard) bodyClassName += " button-list";
 
   return (
-    <div className={`${className}${props.small ? " card-small" : ""}`}>
-      {!!props.headline && <div className={headerClassName}>
-        {props.headline}
+    <div className={`${className}${small ? " card-small" : ""} ${props.onClick ? " clickable" : ""}`}
+         onClick={props.onClick}>
+      {!!headline && <div className={headerClassName}>
+        {!!headlineIcon ? <><Icon icon={headlineIcon}/></> : ""}
+        {headline}
       </div>}
-      {!!props.children && <div className={bodyClassName}>
-        {props.children}
+      {!!children && <div className={bodyClassName}>
+        {children}
       </div>}
     </div>
   )

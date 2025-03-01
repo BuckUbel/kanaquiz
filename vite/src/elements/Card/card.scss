@@ -1,8 +1,8 @@
-@import '../../scss/values/responsive';
+@use '../../scss/values/responsive' as responsive;
 
 .card {
   flex: 1;
-  min-width: calc(210px - 2rem - 2px);
+  min-width: calc(210px - 2rem - 8px);
   padding: 1rem;
   background: var(--background-color-light);
   border: 1px solid var(--border-color-light);
@@ -11,20 +11,78 @@
 
 
   &.card-small {
-    max-width: $width-s;
-    @media (max-width: $width-m) {
-      max-width: $width-xs;
+    max-width: responsive.$width-s;
+    @media (max-width: responsive.$width-m) {
+      max-width: 100%
     }
-    @media (max-width: $width-s) {
-      max-width: calc($width-xs / 2);
+    @media (max-width: responsive.$width-s) {
+      //max-width: #{responsive.$width-xs};
+    }
+  }
+
+  &.card-primary {
+    background: var(--color-primary-darker);
+    border-color: var(--color-primary-darker);
+    box-shadow: 0 0 20px 4px var(--color-primary-darker);
+  }
+
+  &.card-secondary {
+    background: var(--color-secondary-darker);
+    border-color: var(--color-secondary-darker);
+    box-shadow: 0 0 20px 4px var(--color-secondary-darker);
+  }
+
+  &.card-tertiary {
+    background: var(--color-tertiary-darker);
+    border-color: var(--color-tertiary-darker);
+    box-shadow: 0 0 20px 4px var(--color-tertiary-darker);
+  }
+
+  &.clickable {
+    user-select: none;
+    cursor: pointer;
+
+    .img-container {
+      img {
+        transition: transform 0.5s ease-in-out;
+      }
+    }
+
+    &:hover {
+      filter: brightness(1.3);
+
+      .img-container {
+        filter: brightness(0.75);
+
+        img {
+          transform: scale(1.5);
+        }
+      }
     }
   }
 
   .card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+
     margin-bottom: 1rem;
+
+    svg {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   .card-body {
     margin-bottom: 1rem;
+
+    .img-container, img {
+
+      //margin: 0 auto;
+      //display: block;
+      //max-width: 100%;
+    }
   }
 }
