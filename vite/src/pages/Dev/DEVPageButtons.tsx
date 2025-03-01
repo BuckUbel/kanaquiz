@@ -20,28 +20,28 @@ function DEVPageButtons() {
                       className={"pulsing-animation"}
                       width={50}
                       height={50}/>
-                Click me
+                Click me 1
               </button>
               <button className={"icon-button colorful"}>
                 <Icon icon={"material-symbols:adb"}
                       className={"pulsing-animation"}
                       width={50}
                       height={50}/>
-                Click me more
+                Click me more 2
               </button>
               <button className={"icon-button colorful2"}>
                 <Icon icon={"material-symbols:ar-stickers-outline"}
                       className={"bouncing-animation"}
                       width={50}
                       height={50}/>
-                Click me
+                Click me 3
               </button>
               <button className={"icon-button colorful2"}>
                 <Icon icon={"material-symbols:deceased-outline-sharp"}
                       className={"shake-animation"}
                       width={50}
                       height={50}/>
-                Click me
+                Click me 4
               </button>
 
               <button className={"icon-button colorful2"}>
@@ -49,28 +49,28 @@ function DEVPageButtons() {
                       className={"wobble-animation"}
                       width={50}
                       height={50}/>
-                Click me
+                Click me 5
               </button>
               <button className={"icon-button colorful2"}>
                 <Icon icon={"material-symbols:helicopter-outline-sharp"}
                       className={"jump-animation"}
                       width={50}
                       height={50}/>
-                Click me
+                Click me 6
               </button>
               <button className={"icon-button colorful3"}>
                 <Icon icon={"material-symbols:attractions-outline-rounded"}
                       width={50}
                       height={50}/>
-                Click me
+                Click me 7
               </button>
 
             </div>
             <div className={"container-row zero-flex button-container"}>
-              <button className={"greyful"}> Click me</button>
-              <button className={"colorful"}> Click me</button>
-              <button className={"colorful2"}> Click me</button>
-              <button className={"colorful3"}> Click me</button>
+              <button className={"greyful"}> Click me 8</button>
+              <button className={"colorful"}> Click me 9</button>
+              <button className={"colorful2"}> Click me 10</button>
+              <button className={"colorful3"}> Click me 11</button>
             </div>
           </div>
         </Card>

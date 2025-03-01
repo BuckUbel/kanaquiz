@@ -1,5 +1,5 @@
 import Tag from "../../elements/Tag/Tag.tsx";
-import TagsContainer from "../../elements/Tag/TagContainer.tsx";
+import TagsContainer from "../../elements/Tag/TagsContainer.tsx";
 import Card from "../../elements/Card/Card.tsx";
 import {useAppState} from "../../state/useAppState.ts";
 
