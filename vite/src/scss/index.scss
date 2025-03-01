@@ -1,7 +1,7 @@
-@import 'values/color';
-@import 'values/sizes';
-@import 'values/responsive';
-@import 'values/zIndex';
+@use 'values/color' as color;
+@use 'values/sizes' as sizes;
+@use 'values/responsive' as responsive;
+@use 'values/zIndex' as zIndex;
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

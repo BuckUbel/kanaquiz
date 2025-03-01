@@ -1,0 +1,85 @@
+@use '@/scss/values/responsive';
+
+.char-table {
+  .group-row {
+
+  }
+
+  .group-header {
+    max-width: 150px;
+    border: 1px solid white;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 50px;
+    font-weight: bold;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .group-body {
+    //display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+    flex-direction: row;
+    @media (max-width: #{responsive.$width-s}) {
+      //flex-direction: row;
+    }
+  }
+
+  .char-element {
+    max-width: 250px;
+    border: 1px solid grey;
+    gap: 0;
+    user-select: none;
+    cursor: pointer;
+
+    .japanese-char {
+      font-size: 50px;
+      font-weight: bold;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+
+      span {
+        display: block;
+        min-width: 50px;
+        padding: 0 10px;
+
+        &:nth-child(2) {
+          border-left: 1px solid grey;
+
+          @media (max-width: #{responsive.$width-m}) {
+            border-left: none;
+            border-top: 1px solid grey;
+          }
+
+        }
+      }
+    }
+
+    .primary {
+      color: var(--color-primary);
+    }
+
+    .secondary {
+      color: var(--color-secondary);
+    }
+
+    .tertiary {
+      color: var(--color-tertiary);
+    }
+
+    .romaji-char {
+      font-size: 30px;
+      line-height: 1.2;
+    }
+  }
+}

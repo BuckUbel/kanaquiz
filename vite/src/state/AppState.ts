@@ -6,11 +6,17 @@ export interface AppState {
     infoMessageState: 'success' | 'failure' | 'info' | '';
     openModal: undefined | MODAL_KEYS
   }
-  dev:{
+  dev: {
     tag1: boolean;
     tag2: boolean;
     tag3: boolean;
     tag4: boolean;
     notificationReload: boolean;
+  }
+  dict: {
+    charsetRomaji: boolean;
+    charsetHiragana: boolean;
+    charsetKatakana: boolean;
+    charsetKanji: boolean;
   }
 }

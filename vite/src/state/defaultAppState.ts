@@ -12,6 +12,12 @@ export const defaultAppState: AppState = {
     tag3:false,
     tag4:false,
     notificationReload:false,
+  },
+  dict:{
+    charsetRomaji: true,
+    charsetHiragana: true,
+    charsetKatakana: false,
+    charsetKanji: false,
   }
 };
 
