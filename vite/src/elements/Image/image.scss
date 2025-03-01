@@ -1,0 +1,33 @@
+.img-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden; /* Verhindert, dass der Hintergrund über die Container-Grenzen hinausragt */
+  padding: 20px 0;
+}
+
+.img-container .blur-image {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 35px;
+  height: calc(100% - 70px);
+
+  object-fit: cover; /* Passend skalieren */
+  filter: blur(3px); /* Unschärfe-Effekt anwenden */
+  z-index: 1; /* Hintergrund */
+  transform: scale(1.2); /* Minimal vergrößern, um Ränder zu vermeiden */
+}
+
+.img-container .sharp-image {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  z-index: 2; /* Vordergrund */
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 0 10px 4px black;
+
+
+
+}
