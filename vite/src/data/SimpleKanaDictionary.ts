@@ -1,4 +1,4 @@
-type KanaType = "hiragana" | "katakana"; // Define the main types of kana
+type KanaType = "hiragana" | "katakana" | "katakana_ext"; // Define the main types of kana
 
 // Define the structure of the character groups
 type KanaCharacters = {
@@ -72,11 +72,15 @@ export const SimpleKanaDictionary: KanaDictionary = {
     'j': {'ジャ': ['ja', 'jya'], 'ジュ': ['ju', 'jyu'], 'ジョ': ['jo', 'jyo']},
     'by': {'ビャ': ['bya'], 'ビュ': ['byu'], 'ビョ': ['byo']},
     'py': {'ピャ': ['pya'], 'ピュ': ['pyu'], 'ピョ': ['pyo']},
-    'EX1F': {'ファ': ['fa'], 'フィ': ['fi'], 'フェ': ['fe'], 'フォ': ['fo'], 'フュ': ['fyu']},
+  },
+  'katakana_ext': {
+    'EX1F': {'ファ': ['fa'], 'フィ': ['fi'], 'フュ': ['fyu'], 'フェ': ['fe'], 'フォ': ['fo']},
     'EX2W': {
       'ウィ': ['wi'],
       'ウェ': ['we'],
       'ウォ': ['wo'],
+    },
+    'EX2V': {
       'ヴァ': ['va'],
       'ヴィ': ['vi'],
       'ヴェ': ['ve'],
@@ -92,6 +96,9 @@ export const SimpleKanaDictionary: KanaDictionary = {
       'フ': ['fu', 'hu'],
       'ワ': ['wa'],
       'ラ': ['ra'],
+      'ヲ': ['wo', 'o']
+    },
+    'SIM 3': {
       'ス': ['su'],
       'ヌ': ['nu'],
       'ヲ': ['wo', 'o']
@@ -99,7 +106,12 @@ export const SimpleKanaDictionary: KanaDictionary = {
   }
 };
 
-export const _SimpleKanaDictionary: KanaDictionary = {
+type KanaDictionaryOld = {
+  [key in "hiragana" | "katakana"]: {
+    [groupName: string]: KanaCharacters; // Each "hiragana" or "katakana" contains groups with character info
+  };
+};
+export const _SimpleKanaDictionary: KanaDictionaryOld = {
   'hiragana': {
     'h_group1': {'あ': ['a'], 'い': ['i'], 'う': ['u'], 'え': ['e'], 'お': ['o']},
     'h_group2': {'か': ['ka'], 'き': ['ki'], 'く': ['ku'], 'け': ['ke'], 'こ': ['ko']},

@@ -3,8 +3,10 @@ import {ROUTES} from "../components/Router/Routes.ts";
 import {Icon} from "@iconify/react";
 import {NavLinkItem} from "../elements/NavLinkItem.tsx";
 import {SimpleKanaDictionary} from "../data/SimpleKanaDictionary.ts";
+import {useAppState} from "@/state/useAppState.ts";
 
 function IndexPage() {
+  const [charsetBoolean] = useAppState("dict", "charsetBoolean");
 
   return (
     <>
@@ -20,12 +22,16 @@ function IndexPage() {
         </Card>
       </div>
 
-      <div className={"container-row"}>
+      <div className={"container-row kana-overview"}>
         <div className={"container-col"}>
           <Card headline={<h3>Hiragana · ひらがな</h3>} small>
             <p>あ · い · う · え · お</p>
             {Object.values(SimpleKanaDictionary.hiragana).map((kanas, i) => {
-              return <p key={i}>{Object.keys(kanas)}</p>;
+              return <p key={i}>{Object.keys(kanas).map((char) =>
+                <span className={`${charsetBoolean[char] ? "activated-char" : ""}`}>
+                {char}
+              </span>)}
+              </p>;
             })}
           </Card>
           <Card buttonCard small>
@@ -39,7 +45,10 @@ function IndexPage() {
           <Card headline={<h3>Katakana · カタカナ</h3>} small>
             <p>ア · イ · ウ · エ · オ</p>
             {Object.values(SimpleKanaDictionary.katakana).map((kanas) => {
-              return <p>{Object.keys(kanas)}</p>;
+              return <p>{Object.keys(kanas).map((char) =>
+                <span className={`${charsetBoolean[char] ? "activated-char" : ""}`}>
+                {char}
+              </span>)}</p>;
             })}
           </Card>
           <Card buttonCard small>

@@ -1,7 +1,13 @@
 import Card from "../../elements/Card/Card.tsx";
 import {Icon} from "@iconify/react";
+import SwitchButton from "@/elements/Button/SwitchButton.tsx";
+import {useAppState} from "@/state/useAppState.ts";
 
 function DEVPageButtons() {
+
+  const onOffState1 = useAppState("dev","onOff1")
+  const onOffState2 = useAppState("dev","onOff2")
+  const onOffState3 = useAppState("dev","onOff3")
 
   return (
     <>
@@ -13,6 +19,12 @@ function DEVPageButtons() {
               <button className={"primary"}>Primary</button>
               <button className={"secondary"}>Secondary</button>
               <button className={"tertiary"}>Tertiary</button>
+            </div>
+            <div className={"container-row zero-flex button-container"}>
+              <SwitchButton state={onOffState1} onLabel={"On"} offLabel={"Off"} />
+              <SwitchButton state={onOffState2} onLabel={"On"} offLabel={"Off"} />
+              <SwitchButton state={onOffState3} onLabel={"Hiragana"} offLabel={"Katagana"} />
+              <SwitchButton state={onOffState3} onLabel={"Hiragana/Katakana"} offLabel={"Off"} />
             </div>
             <div className={"container-row zero-flex button-container"}>
               <button className={"icon-button greyful"}>

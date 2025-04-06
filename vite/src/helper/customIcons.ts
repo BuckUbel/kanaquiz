@@ -8,8 +8,6 @@ import {addIcon} from '@iconify/react';
 import {extractBodyFromSvg} from "./extractBodyFromSvg.ts";
 
 export function addCustomIcons() {
-  console.log(kanaDictionarySvg);
-
   addIcon('kana-question', {body: extractBodyFromSvg(kanaQuestionSvg), width: 24, height: 24});
   addIcon('kana-dictionary', {body: extractBodyFromSvg(kanaDictionarySvg), width: 25, height: 25});
   addIcon('kana-dictionary-outline', {body: extractBodyFromSvg(kanaDictionaryOutlineSvg), width: 25, height: 25});

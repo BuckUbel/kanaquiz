@@ -3,6 +3,19 @@ import {UseAppStateType, UseAppStateTypeProps} from "../types/default.ts";
 import {useContext} from "react";
 import {AppState} from "./AppState";
 
+
+export const buildAppState =
+  <StateKey extends keyof AppState, Key extends keyof AppState[StateKey]>
+  (stateKey: StateKey, key: Key, prev: AppState, value: AppState[StateKey][Key]) => {
+    return {
+      ...prev,
+      [stateKey]: {
+        ...prev[stateKey],
+        [key]: value,
+      },
+    };
+  }
+
 /**
  * StateKey is property of AppState
  * AppState[StateKey] is type of the property of AppState
@@ -14,36 +27,25 @@ import {AppState} from "./AppState";
  *
  * @param stateKey
  * @param key
- * @param withChangeFct
  */
 export const useAppState = <StateKey extends keyof AppState,
   Key extends keyof AppState[StateKey]>(
-  stateKey: StateKey,
-  key: Key,
-  withChangeFct?: (keys: Key) => Partial<AppState[StateKey]>
+  stateKey: StateKey & string,
+  key: Key & string,
 ): UseAppStateType<AppState[StateKey][Key]> => {
   //
-  const [state, setState] = useContext(AppContext);
+  const [state, setState, setEffect] = useContext(AppContext);
 
-  const buildReturnValue = (prev: AppState, value: AppState[StateKey][Key]) => {
-    return {
-      ...prev,
-      [stateKey]: {
-        ...prev[stateKey],
-        [key]: value,
-        ...withChangeFct ? withChangeFct(key) : {},
-      },
-    };
-  }
   const setValue = (value: AppState[StateKey][Key]) => {
     setState((prev: AppState) => {
-      return buildReturnValue(prev, value);
+      return setEffect(buildAppState(stateKey, key, prev, value), stateKey, key);
     });
   };
   const setValueFromPrev = (prevFunction: (value: AppState[StateKey][Key]) => AppState[StateKey][Key]) => {
     setState((prev: AppState) => {
       const newValue = prevFunction(prev[stateKey][key]);
-      return buildReturnValue(prev, newValue);
+      return setEffect(buildAppState(stateKey, key, prev, newValue), stateKey, key);
+      ;
     });
   };
 

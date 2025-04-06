@@ -12,6 +12,12 @@
   overflow: hidden;
 }
 
+.kana-overview{
+  .activated-char{
+    color: var(--color-primary);
+  }
+}
+
 .container-col, .container-row {
   flex: 1;
   display: flex;

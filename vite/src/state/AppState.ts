@@ -1,4 +1,5 @@
 import {MODAL_KEYS} from "./constants.ts";
+import {AnyObject} from "@/types/default.ts";
 
 export interface AppState {
   app: {
@@ -12,11 +13,17 @@ export interface AppState {
     tag3: boolean;
     tag4: boolean;
     notificationReload: boolean;
+    onOff1: boolean;
+    onOff2: boolean;
+    onOff3: boolean;
   }
   dict: {
     charsetRomaji: boolean;
     charsetHiragana: boolean;
     charsetKatakana: boolean;
     charsetKanji: boolean;
+    charset: string[][];
+    charsetBoolean: AnyObject<boolean>;
+    charsetSelection: string[];
   }
 }

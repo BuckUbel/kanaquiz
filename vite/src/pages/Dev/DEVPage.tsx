@@ -9,18 +9,18 @@ function DEVPage() {
   return (
     <>
       <div className={"container-row"}>
-      <Card headline={<h2>DEV Page</h2>}/>
+        <Card headline={<h2>DEV Page</h2>}/>
       </div>
-        <div className={"container-row"}>
-          <DEVPageTags/>
-        </div>
-        <div className={"container-row"}>
-          <DEVPageNotifications/>
-        </div>
-        <div className={"container-row"}>
-          <DEVPageButtons/>
-          <DEVPageModal/>
-        </div>
+      <div className={"container-row"}>
+        <DEVPageTags/>
+      </div>
+      <div className={"container-row"}>
+        <DEVPageNotifications/>
+      </div>
+      <div className={"container-row"}>
+        <DEVPageButtons/>
+        <DEVPageModal/>
+      </div>
     </>
   )
 }
