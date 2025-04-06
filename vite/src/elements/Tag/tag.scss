@@ -13,7 +13,8 @@
   &.inline-tags {
     height: 50px;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   .tag {
@@ -30,9 +31,10 @@
     white-space: nowrap;
 
 
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--base-button-color);
     color: var(--font-color);
     --tag-color: var(--color-primary-darker);
+    --tag-font-color: var(--color-primary-font);
     border-radius: 30px;
     border: 2px solid var(--tag-color);
 
@@ -40,33 +42,42 @@
       --tag-color: var(--color-info-darker);
       color: var(--color-info);
       border-color: var(--color-info-darker);
+      --tag-font-color: var(--font-color);
     }
 
     &.success {
       --tag-color: var(--color-success-darker);
       color: var(--color-success);
       border-color: var(--color-success-darker);
+      --tag-font-color: var(--font-color);
     }
 
     &.failure {
       --tag-color: var(--color-warning-darker);
       color: var(--color-warning);
       border-color: var(--color-warning-darker);
+      --tag-font-color: var(--font-color);
     }
+
     &.primary {
       --tag-color: var(--color-primary-darker);
       color: var(--color-primary);
       border-color: var(--color-primary-darker);
+      --tag-font-color: var(--color-primary-font);
     }
+
     &.secondary {
       --tag-color: var(--color-secondary-darker);
       color: var(--color-secondary);
       border-color: var(--color-secondary-darker);
+      --tag-font-color: var(--color-secondary-font);
     }
+
     &.tertiary {
       --tag-color: var(--color-tertiary-darker);
       color: var(--color-tertiary);
       border-color: var(--color-tertiary-darker);
+      --tag-font-color: var(--color-tertiary-font);
     }
 
     transition: background 0.25s, color 0.25s, border-color 0.25s, padding 0.5s;
@@ -74,7 +85,7 @@
     &.active {
       padding-right: 24px;
       background: var(--tag-color);
-      color: var(--font-color);
+      color: var(--tag-font-color);
     }
 
     cursor: pointer;

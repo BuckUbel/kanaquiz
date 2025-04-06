@@ -26,7 +26,7 @@ button, .button {
    */
 
   border: 1px solid var(--border-color);
-  background-color: #00000022;
+  background-color: var(--base-button-color);
 
   &.active {
     color: var(--color-primary);

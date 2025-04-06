@@ -3,7 +3,7 @@ nav {
   left: 0;
   top: 0;
   width: calc(100% - 2rem);
-  height: var(--nav-height);
+  height: calc(var(--nav-height) - 1rem);
   z-index: var(---zIndex-navbar);
   background: var(--navigation-bg-color);
   color: var(--navigation-font-color);

@@ -1,6 +1,7 @@
 import Card from "../../elements/Card/Card.tsx";
-import {useAppState} from "../../state/useAppState.ts";
+import {useAppState} from "@/state/useAppState.ts";
 import {Icon} from "@iconify/react";
+import Modal from "@/elements/Modal/Modal.tsx";
 
 function DEVPageModal() {
 
@@ -20,6 +21,15 @@ function DEVPageModal() {
                 />
                 Open Modal
               </button>
+
+              <Modal
+                variant={"development"}
+                headline={"Entwicklungs Modal"}
+                content={<Card style={{flexGrow: 2, display:"flex"}}>
+                  <p style={{width: "100%", textAlign: "center"}}>Teste auch verschiedene-Fenstergrößen aus!</p>
+                  <div><p>Designs:</p><button>Test</button></div>
+                </Card>}
+              />
             </div>
             <div className={"container-col with-border"}>
               Modal

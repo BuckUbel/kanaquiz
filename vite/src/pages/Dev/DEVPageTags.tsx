@@ -1,7 +1,7 @@
-import Tag from "../../elements/Tag/Tag.tsx";
-import TagsContainer from "../../elements/Tag/TagsContainer.tsx";
-import Card from "../../elements/Card/Card.tsx";
-import {useAppState} from "../../state/useAppState.ts";
+import Tag from "@/elements/Tag/Tag.tsx";
+import TagsContainer from "@/elements/Tag/TagsContainer.tsx";
+import Card from "@/elements/Card/Card.tsx";
+import {useAppState} from "@/state/useAppState.ts";
 
 function DEVPageTags() {
 
@@ -25,7 +25,7 @@ function DEVPageTags() {
       </div>
       <div className={"container-col"}>
         <Card headline={<h3>Inline Tags</h3>} small>
-          <TagsContainer className={"with-border"} inline>
+          <TagsContainer className={"with-border"} inline style={{maxWidth:"500px"}}>
             <Tag active={false}>Off State</Tag>
             <Tag state={tag1State} active={true}>On State</Tag>
             <Tag state={tag2State} status={"info"}>Info Status</Tag>
