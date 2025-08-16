@@ -1,6 +1,7 @@
 {
   "name": "kanaquiz",
-  "private": true,
+  "license": "MIT",
+  "private": false,
   "version": "3.0.0-alpha-00",
   "type": "module",
   "scripts": {
