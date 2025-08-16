@@ -2,7 +2,7 @@
   "name": "kanaquiz",
   "license": "MIT",
   "private": false,
-  "version": "3.0.0-alpha-00",
+  "version": "3.0.0-beta-01",
   "type": "module",
   "scripts": {
     "dev": "vite",

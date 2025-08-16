@@ -17,7 +17,6 @@ function ProgressRow({levelState, minLevel = 1, maxLevel = 6}: ProgressRowProps)
     if (!!progressRow) {
       const progressItems = progressRow.getElementsByClassName('progress-item');
       const itemIndex = levelState - (minLevel - 1) - 1;
-      console.log(levelState, minLevel, ":",itemIndex)
       if (!!progressItems[itemIndex]) {
         const el = progressItems[itemIndex];
         const elRect = el.getBoundingClientRect();

@@ -50,6 +50,19 @@ function ChangelogPage() {
             </ul>
           </div>
         </Card>
+        <Card headline={<h3>V3.0.0-beta-00</h3>}>
+          <div className={"container-row"} style={{position: "relative"}}>
+            <p>FIRST BETA RELEASE</p>
+            <div className={"rainbow"} style={{position: "absolute"}}/>
+            <div className={"spacer"}/>
+            <i>16.08.2025</i>
+          </div>
+          <ul>
+            <li>Bugfixing</li>
+            <li>Setup the site under /kanaquiz</li>
+            <li>Release on github-pages</li>
+          </ul>
+        </Card>
         <Card headline={<h3>V3.0.0-alpha-05</h3>}>
           <div className={"container-row"}>
             <p>Improve & Bugfixing</p>
