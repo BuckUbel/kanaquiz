@@ -127,7 +127,7 @@ function QuizGamePage() {
   const checkAnswer = (newInputValue?: string) => {
     const thisInputValue = newInputValue ?? inputValue;
     setStatsState((oldStats) => ({...oldStats, [searchedValue]: (oldStats[searchedValue] ?? 0) + 1}))
-    if (toHiragana(thisInputValue) === searchedValue || toKatakana(thisInputValue) === searchedValue) {
+    if (thisInputValue === toRomaji(searchedValue)) {
       const newXP = (EXP_FOR_CORRECT_ANSWER);
       const nextXP = xpState + newXP;
       if (nextXP >= EXP_FOR_LVL_UP) {
