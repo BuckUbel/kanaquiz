@@ -25,7 +25,7 @@ function SettingsPage() {
       </div>
       <div className={"container-row"}>
         <div className={"container-col"}>
-          <Card buttonCard>
+          <Card buttonCard className={"delete-data-card"}>
             <p>If something going wrong or u want delete ur data u can do it here:</p>
             <button className={"warning"} onClick={() => setOpenModal("delete-data")}>
               Delete ALL DATA
@@ -37,7 +37,7 @@ function SettingsPage() {
              content={<>
                <p>Are u sure u want delete all your data?</p>
                  <div className={"container-col button-col"}>
-                   <button className={"warning"} onClick={() => {localStorage.clear(); location.href="/"}}>YES</button>
+                   <button className={"warning"} onClick={() => {localStorage.clear(); location.href=import.meta.env.BASE_URL}}>YES</button>
                    <button className={"warning"} onClick={() => {setOpenModal(undefined)}}>NO</button>
                  </div>
              </>}/>
