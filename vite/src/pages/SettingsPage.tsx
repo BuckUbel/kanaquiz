@@ -37,7 +37,7 @@ function SettingsPage() {
              content={<>
                <p>Are u sure u want delete all your data?</p>
                  <div className={"container-col button-col"}>
-                   <button className={"warning"} onClick={() => {localStorage.clear(); location.reload()}}>YES</button>
+                   <button className={"warning"} onClick={() => {localStorage.clear(); location.href="/"}}>YES</button>
                    <button className={"warning"} onClick={() => {setOpenModal(undefined)}}>NO</button>
                  </div>
              </>}/>
