@@ -27,6 +27,21 @@
   animation: pulsing 2s infinite ease-in-out
 }
 
+@keyframes pulsing-shadow {
+  0%, 100% {
+    box-shadow: 0 0 4px 1px var(--color-tertiary-darker); /* Originalgröße */
+    letter-spacing: 0;
+  }
+  50% {
+    box-shadow: 0 0 16px 4px var(--color-tertiary); /* Originalgröße */
+    letter-spacing: .05em;
+  }
+}
+
+.pulsing-shadow-animation {
+  animation: pulsing-shadow 2s infinite ease-in-out
+}
+
 @keyframes bouncing {
   0% {
     transform: translateY(0);
@@ -250,5 +265,17 @@ $marquee-animation-ScaleX: 1.5;
 
   > :nth-child(6) {
     animation: marquee-1-6 $marquee-animation-duration linear infinite;
+  }
+}
+
+@keyframes background-rotating {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }

@@ -6,7 +6,7 @@ function ImpressumPage() {
     <>
       <h2>Impressum</h2>
       <div className={"container-col"}>
-        <Card headline={<h3><i>204</i> No Impressum Required!</h3>}>
+        <Card headline={<h3><i>204 No Impressum Required!</i></h3>}>
           This website is not a business page.<br />
           All content is for informational purposes only.<br />
           Therefore, there is no legal obligation to provide an Impressum.<br />

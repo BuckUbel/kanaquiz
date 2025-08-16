@@ -88,6 +88,14 @@
       color: var(--tag-font-color);
     }
 
+    &.disabled {
+      background: var(--background-color-light);
+      color: var(--font-disabled-color);
+      border-color: var(--border-color-light);
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;

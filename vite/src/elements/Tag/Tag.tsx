@@ -5,13 +5,14 @@ import {Icon} from "@iconify/react";
 interface TagProps {
   status?: Status
   active?: boolean;
+  disabled?: boolean;
   state?: UseState<boolean> | UseAppStateType<boolean>
   onClick?: (newValue: boolean) => void;
   category?: "primary" | "secondary" | "tertiary";
 }
 
 function Tag(props: PropsWithChildren<TagProps>) {
-  const {state, status, active = true, onClick, category} = props;
+  const {state, status, active = true, disabled= false, onClick, category} = props;
   const ownState = useState<boolean>(active)
   let isActive = ownState[0];
   let setIsActive: SimpleSetState<boolean> = ownState[1];
@@ -20,7 +21,7 @@ function Tag(props: PropsWithChildren<TagProps>) {
     setIsActive = state[1];
   }
 
-  return <div className={`tag ${status ?? ""}${isActive ? " active " : ""} ${category ?? ""}`}
+  return <div className={`tag ${status ?? ""}${isActive ? " active " : ""} ${disabled ? " disabled " : ""} ${category ?? ""}`}
               onClick={() => {
                 const newValue = !isActive;
                 if (!!onClick) onClick(newValue);

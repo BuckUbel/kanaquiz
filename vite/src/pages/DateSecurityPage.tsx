@@ -18,7 +18,7 @@ function DataSecurityPage() {
             </li>
             <li>
               <Icon icon={"material-symbols:compare-arrows-rounded"} width="50" height="30"/>
-              No requests!
+              No api requests!
             </li>
             <li>
               <Icon icon={"nrk:offline"} width="50" height="30"/>

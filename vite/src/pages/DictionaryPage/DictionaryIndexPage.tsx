@@ -1,13 +1,18 @@
-import Card from "../../elements/Card/Card.tsx";
-import {ROUTES} from "../../components/Router/Routes.ts";
+import Card from "@/elements/Card/Card.tsx";
+import {ROUTES} from "@/components/Router/Routes.ts";
 import {useNavigate} from "react-router";
+import CharTranslatorCard from "@/pages/DictionaryPage/CharTranslatorCard.tsx";
 
 function DictionaryIndexPage() {
   const navigate = useNavigate();
 
   return (
     <>
+      <Card>
+        <p> Please look around in the different sections. I hope the information are helpful & correct.</p>
+      </Card>
       <div className={"container-col"}>
+
         <div className={"container-row"}>
           <Card
             small headline={<h3>Char Table</h3>} category={"tertiary"}
@@ -34,9 +39,12 @@ function DictionaryIndexPage() {
           >
           </Card>
         </div>
+        <div className={"container-row"}>
+          <CharTranslatorCard/>
+        </div>
       </div>
     </>
   )
 }
 
-export default DictionaryIndexPage
+export default DictionaryIndexPage;

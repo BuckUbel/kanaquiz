@@ -36,9 +36,8 @@ function CharTable({
             ALL
           </div>
           <div className={"container-col group-body"}>
-
             {new Array(maxSize).fill(0).map((_, index) => (
-              <div className={"container-col group-header"}
+              <div key={index} className={"container-col group-header"}
                    onClick={onColClick ? () => onColClick(index) : undefined}>
                 {chars?.[0]?.[index] ?? ""}
               </div>

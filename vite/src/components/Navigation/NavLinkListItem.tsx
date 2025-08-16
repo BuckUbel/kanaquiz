@@ -5,11 +5,14 @@ import {NavLinkItem, NavLinkOptBaseProps, NavLinkOptProps} from "../../elements/
 interface NavLinkListItemProps extends NavLinkOptBaseProps {
   icon?: IconifyIcon | string;
   iconSize?: number;
+  liClassName?: string;
 }
 
-export function NavLinkListItem(props: NavLinkOptProps<NavLinkListItemProps>) {
-  return <li><NavLinkItem {...props}>
-    {!!props.icon && <Icon icon={props.icon} width={props.iconSize??"50"} height={props.iconSize??"50"}/>}
-    {props.children}
-  </NavLinkItem></li>;
+export function NavLinkListItem({liClassName, ...linkItemProps}: NavLinkOptProps<NavLinkListItemProps>) {
+  return <li className={liClassName}>
+    <NavLinkItem {...linkItemProps}>
+      {!!linkItemProps.icon && <Icon icon={linkItemProps.icon} width={linkItemProps.iconSize ?? "50"} height={linkItemProps.iconSize ?? "50"}/>}
+      <span className={"nav-link-item-title"}>{linkItemProps.children}</span>
+    </NavLinkItem>
+  </li>;
 }

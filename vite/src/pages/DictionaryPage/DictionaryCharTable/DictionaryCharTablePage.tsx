@@ -85,7 +85,6 @@ function DictionaryCharTablePage({selectable, hiragana, katakana}: DictionaryCha
         if (romaji.endsWith(searchEnding) || colIndex === -1) enableKeys.push(newChar)
       })
     })
-
     // const charCol = chars.map((charGroup: string[]) => charGroup?.[colIndex] ?? "");
     const newSelection: AnyObject<boolean> = {...charsetBoolean};
     const newValue = !enableKeys.every(element => charsetBoolean[element]);

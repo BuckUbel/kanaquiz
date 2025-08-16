@@ -50,6 +50,50 @@ function ChangelogPage() {
             </ul>
           </div>
         </Card>
+        <Card headline={<h3>V3.0.0-alpha-05</h3>}>
+          <div className={"container-row"}>
+            <p>Improve & Bugfixing</p>
+            <div className={"spacer"}/>
+            <i>16.08.2025</i>
+          </div>
+          <ul>
+            <li>Add some game ideas</li>
+            <li>Add breadcrumbs</li>
+            <li>Extend quiz mode with useful level conditions</li>
+            <li>Add the other level question possibilities</li>
+            <li>Add settings page for adjust the start and end level</li>
+          </ul>
+        </Card>
+        <Card headline={<h3>V3.0.0-alpha-04</h3>}>
+          <div className={"container-row"}>
+            <p>Quiz Mode!</p>
+            <div className={"spacer"}/>
+            <i>12.08.2025</i>
+          </div>
+          <ul>
+            <li>Add draft main quiz mode</li>
+            <li>Add xp & level system</li>
+            <li>Add win animation</li>
+            <li>Improved input field with key listener</li>
+            <li>Improved mobile css</li>
+            <li>Add Vertical navigation</li>
+          </ul>
+        </Card>
+        <Card headline={<h3>V3.0.0-alpha-03</h3>}>
+          <div className={"container-row"}>
+            <p>Preparing & Fixing</p>
+            <div className={"spacer"}/>
+            <i>11.08.2025</i>
+          </div>
+          <ul>
+            <li>Improve responsive behaviour</li>
+            <li>Add start animation</li>
+            <li>Reordered Main Page and Quiz Page</li>
+            <li>Add char translator at dictionary page</li>
+            <li>Add text input field component with edit-stated-value</li>
+            <li>Finalized selection for quiz chars</li>
+          </ul>
+        </Card>
         <Card headline={<h3>V3.0.0-alpha-02</h3>}>
           <div className={"container-row"}>
             <p>Implement char selection!</p>
@@ -74,7 +118,7 @@ function ChangelogPage() {
           <ul>
             <li>Implement dictionary site</li>
             <li>Add first implementation of char table</li>
-            <li>→First usage of the origional data, the kana dictionary!</li>
+            <li>→First usage of the original data, the kana dictionary!</li>
             <li>Add a simple draft of vocabulary UI</li>
             <li>Add some simple ideas for minigames</li>
           </ul>

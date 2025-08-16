@@ -1,0 +1,29 @@
+.big-kana-view {
+  text-align: center;
+  font-size: 72px;
+}
+
+.answer-input-container {
+  justify-content: center;
+
+  .input-field-container{
+align-items: center;
+  }
+  input {
+    text-align: center;
+    font-size: 48px;
+  }
+  button{
+    font-size: 24px;
+
+  }
+}
+
+.stats-card{
+  .success-count{
+     color: var(--color-success);
+   }
+  .failure-count{
+    color: var(--color-warning);
+  }
+}

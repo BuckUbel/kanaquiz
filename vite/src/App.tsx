@@ -5,14 +5,18 @@ import {Outlet} from "react-router";
 import Footer from "./components/Footer/Footer.tsx";
 import {useAppState} from "@/state/useAppState.ts";
 import {useEffect} from "react";
-import {prepareKanaSelection} from "@/helper/prepareKanaSelection.ts";
+import IntroModal from "@/components/application/IntroModal.tsx";
+
+// To clear all local storage:
+// localStorage.clear();
+// alert(JSON.stringify(localStorage, null, 2))
 
 addCustomIcons()
 
 function App() {
-
   const [charsetBoolean] = useAppState("dict", "charsetBoolean");
   const [, setCharsetSelection] = useAppState("dict", "charsetSelection");
+
   useEffect(() => {
     const kanas = Object.keys(charsetBoolean);
     const selection = Object.values(charsetBoolean);
@@ -22,6 +26,7 @@ function App() {
   return (
     <>
       <Navigation/>
+      <IntroModal/>
       <div className={"app-container"}>
         <Outlet/>
       </div>

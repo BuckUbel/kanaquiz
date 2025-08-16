@@ -2,6 +2,7 @@ import {NavLink, NavLinkProps} from "react-router";
 import * as React from "react";
 import {HTMLAttributes, PropsWithChildren} from "react";
 import {ROUTES} from "../components/Router/Routes.ts";
+import {useAppState} from "@/state/useAppState.ts";
 
 export interface NavLinkOptBaseProps extends HTMLAttributes<HTMLAnchorElement> {
   active?: boolean;
@@ -15,10 +16,15 @@ export type NavLinkOptProps<T> = PropsWithChildren<T & ({ to?: never } | (NavLin
 
 export function NavLinkItem(props: NavLinkOptProps<NavLinkOptBaseProps>) {
   const {active, onClick, ...otherProps} = props;
+  const [, setOpenVerticalNav] = useAppState("app", "openVerticalNav");
+
   if (otherProps.to) {
     return <NavLink
       {...otherProps}
-      onClick={onClick}
+      onClick={(_ev) => {
+        setOpenVerticalNav(false);
+        onClick?.(_ev)
+      }}
       className={({isActive}) =>
         ((active || isActive) ? "active " : "") + (otherProps.className ?? "")
       }

@@ -2,11 +2,8 @@ import Card from "../elements/Card/Card.tsx";
 import {ROUTES} from "../components/Router/Routes.ts";
 import {Icon} from "@iconify/react";
 import {NavLinkItem} from "../elements/NavLinkItem.tsx";
-import {SimpleKanaDictionary} from "../data/SimpleKanaDictionary.ts";
-import {useAppState} from "@/state/useAppState.ts";
 
 function IndexPage() {
-  const [charsetBoolean] = useAppState("dict", "charsetBoolean");
 
   return (
     <>
@@ -18,50 +15,23 @@ function IndexPage() {
           <Icon icon={"kana-question"} width="50" height="50"/>
         </div>
         }>
-          <p> Please choose a quiz mode: </p>
         </Card>
       </div>
-
-      <div className={"container-row kana-overview"}>
-        <div className={"container-col"}>
-          <Card headline={<h3>Hiragana · ひらがな</h3>} small>
-            <p>あ · い · う · え · お</p>
-            {Object.values(SimpleKanaDictionary.hiragana).map((kanas, i) => {
-              return <p key={i}>{Object.keys(kanas).map((char) =>
-                <span className={`${charsetBoolean[char] ? "activated-char" : ""}`}>
-                {char}
-              </span>)}
-              </p>;
-            })}
-          </Card>
-          <Card buttonCard small>
-            <button className={"active"}>All</button>
-            <button>None</button>
-            <button>All alternative</button>
-            <button>No alternative</button>
-          </Card>
-        </div>
-        <div className="container-col">
-          <Card headline={<h3>Katakana · カタカナ</h3>} small>
-            <p>ア · イ · ウ · エ · オ</p>
-            {Object.values(SimpleKanaDictionary.katakana).map((kanas) => {
-              return <p>{Object.keys(kanas).map((char) =>
-                <span className={`${charsetBoolean[char] ? "activated-char" : ""}`}>
-                {char}
-              </span>)}</p>;
-            })}
-          </Card>
-          <Card buttonCard small>
-            <button>All</button>
-            <button>None</button>
-            <button>All alternative</button>
-            <button>No alternative</button>
-          </Card>
-        </div>
-      </div>
+      <Card>
+        <p>Do u want learn Japanese chars? So this is the right site for u!</p>
+        <p>We have a really cool quiz mode here. And some other games</p>
+        <br/>
+        <p>This site is on a beta state. Some functionality is not already available!</p>
+      </Card>
       <div className={"button-list main-button-list"}>
-        <NavLinkItem to={ROUTES.QUIZ} className={"button primary full-width"}>Start the Quiz!</NavLinkItem>
-        <NavLinkItem to={ROUTES.SETTINGS} className={"button secondary full-width"}>Configure Settings</NavLinkItem>
+        <NavLinkItem to={ROUTES.QUIZ} className={"button icon-button primary colorful3 pulsing-shadow-animation"}>
+          <div className={"container-row"}>
+            <Icon icon={"kana-question"} width="50" height="50"/>
+            <Icon icon={"icon-park-solid:play"} width="50" height="50"/>
+          </div>
+          Start the Quiz!
+        </NavLinkItem>
+        <NavLinkItem to={ROUTES.SETTINGS} className={"button colorful2"}>Configure Settings</NavLinkItem>
       </div>
     </>
   )

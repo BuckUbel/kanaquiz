@@ -6,6 +6,7 @@ function DictionaryVocabularyPage() {
   return (
     <>
       <h3>Vocabulary</h3>
+      <p style={{color:"red", fontSize:"36px"}}>It's in development!</p>
       <div className={"container-row"}>
         <div className={"container-col"}>
           <Card headline={<h3>Listen</h3>}>

@@ -5,7 +5,19 @@ export interface AppState {
   app: {
     infoMessage: string;
     infoMessageState: 'success' | 'failure' | 'info' | '';
-    openModal: undefined | MODAL_KEYS
+    openModal: undefined | MODAL_KEYS;
+    openVerticalNav: boolean;
+  }
+  quiz: {
+    startLevel: number,
+    endLevel: number,
+    defaultStartLevel: number,
+    defaultEndLevel: number,
+  }
+  settings: {
+    firstStart: Date | null;
+    isFirstStart: boolean;
+    setupLevel: 1 | 2 | 3 | null;
   }
   dev: {
     tag1: boolean;

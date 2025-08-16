@@ -1,4 +1,4 @@
-type KanaType = "hiragana" | "katakana" | "katakana_ext"; // Define the main types of kana
+type KanaType = "hiragana" | "katakana" | "hiragana_ext" | "katakana_ext"; // Define the main types of kana
 
 // Define the structure of the character groups
 type KanaCharacters = {
@@ -43,6 +43,22 @@ export const SimpleKanaDictionary: KanaDictionary = {
     'by': {'びゃ': ['bya'], 'びゅ': ['byu'], 'びょ': ['byo']},
     'py': {'ぴゃ': ['pya'], 'ぴゅ': ['pyu'], 'ぴょ': ['pyo']}
   },
+  'hiragana_ext': {
+  //   'SIM 1': {'シ': ['shi', 'si'], 'ツ': ['tsu', 'tu'], 'ソ': ['so'], 'ン': ['n'], 'ノ': ['no']},
+  //   'SIM 2': {
+  //     'ウ': ['u'],
+  //     'フ': ['fu', 'hu'],
+  //     'ワ': ['wa'],
+  //     'ラ': ['ra'],
+  //     'ヲ': ['wo', 'o']
+  //   },
+  //   'SIM 3': {
+  //     'ス': ['su'],
+  //     'ヌ': ['nu'],
+  //     'ヲ': ['wo', 'o']
+  //   },
+  },
+
   'katakana': {
     'vocals': {'ア': ['a'], 'イ': ['i'], 'ウ': ['u'], 'エ': ['e'], 'オ': ['o']},
     'k': {'カ': ['ka'], 'キ': ['ki'], 'ク': ['ku'], 'ケ': ['ke'], 'コ': ['ko']},
@@ -74,21 +90,21 @@ export const SimpleKanaDictionary: KanaDictionary = {
     'py': {'ピャ': ['pya'], 'ピュ': ['pyu'], 'ピョ': ['pyo']},
   },
   'katakana_ext': {
-    'EX1F': {'ファ': ['fa'], 'フィ': ['fi'], 'フュ': ['fyu'], 'フェ': ['fe'], 'フォ': ['fo']},
-    'EX2W': {
-      'ウィ': ['wi'],
-      'ウェ': ['we'],
-      'ウォ': ['wo'],
-    },
-    'EX2V': {
-      'ヴァ': ['va'],
-      'ヴィ': ['vi'],
-      'ヴェ': ['ve'],
-      'ヴォ': ['vo']
-    },
-    'EX3TS': {'ツァ': ['tsa'], 'ツィ': ['tsi'], 'ツェ': ['tse'], 'ツォ': ['tso']},
-    'EX4': {'チェ': ['che'], 'シェ': ['she'], 'ジェ': ['je']},
-    'EX5': {'ティ': ['ti'], 'ディ': ['di'], 'デュ': ['du'], 'トゥ': ['tu']},
+    // 'EX1F': {'ファ': ['fa'], 'フィ': ['fi'], 'フュ': ['fyu'], 'フェ': ['fe'], 'フォ': ['fo']},
+    // 'EX2W': {
+    //   'ウィ': ['wi'],
+    //   'ウェ': ['we'],
+    //   'ウォ': ['wo'],
+    // },
+    // 'EX2V': {
+    //   'ヴァ': ['va'],
+    //   'ヴィ': ['vi'],
+    //   'ヴェ': ['ve'],
+    //   'ヴォ': ['vo']
+    // },
+    // 'EX3TS': {'ツァ': ['tsa'], 'ツィ': ['tsi'], 'ツェ': ['tse'], 'ツォ': ['tso']},
+    // 'EX4': {'チェ': ['che'], 'シェ': ['she'], 'ジェ': ['je']},
+    // 'EX5': {'ティ': ['ti'], 'ディ': ['di'], 'デュ': ['du'], 'トゥ': ['tu']},
 
     'SIM 1': {'シ': ['shi', 'si'], 'ツ': ['tsu', 'tu'], 'ソ': ['so'], 'ン': ['n'], 'ノ': ['no']},
     'SIM 2': {

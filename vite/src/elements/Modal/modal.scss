@@ -15,6 +15,11 @@ $modal-width-margin: var(--nav-width);
   background: rgba(0, 0, 0, 0.6);
   z-index: var(---zIndex-modal);
 
+  @media (max-width: responsive.$width-s) {
+    top: var(--nav-height);
+    height: 100%;
+  }
+
   h2 {
     margin-top: 0;
     width: calc(100% - 100px);
@@ -30,16 +35,18 @@ $modal-width-margin: var(--nav-width);
     min-height: 300px;
     top: 35px;
     border-radius: 10px;
+    box-shadow: 0 0 20px 4px var(--color-primary);
 
     @media (max-width: responsive.$width-s) {
-      width: 100%;
-      max-height: 100% !important;
-      height: 100%;
-      top: 0;
-      padding-top:10px;
+      width: calc(100% - 4rem);
+      //width: 100%;
+      //max-height: 100% !important;
+      height: calc(100% - 5rem);
+      top: 1rem !important;
+      padding-top: 10px;
 
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      //border-bottom-left-radius: 0;
+      //border-bottom-right-radius: 0;
     }
 
     h2 {
@@ -116,5 +123,64 @@ $modal-width-margin: var(--nav-width);
 }
 
 
+.modal-outer.modal-class-introduction {
+
+  .modal-inner {
+    //height: unset;
+    padding: 1rem 1rem 3rem 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 10px;
+    overflow: hidden;
+    @media (max-width: responsive.$width-s) {
+      max-height: 400px;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+      overflow-y: hidden;
+      > .container-col {
+        > * {
+          scroll-snap-align: center;
+        }
+      }
+    }
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  .modal-container {
+    //max-height: 542px;
+    //overflow: hidden;
+    height: unset;
+
+    @media (max-width: responsive.$width-s) {
+      //max-height: 850px !important;
+      height: unset;
+      top: 0;
+      padding-top: 10px;
+
+      //border-bottom-left-radius: 0;
+      //border-bottom-right-radius: 0;
+    }
+  }
+}
+.modal-outer.modal-class-delete-data {
+  .modal-container {
+    max-height: 300px;
+    max-width: 400px;
+
+  }
+  .modal-inner{
+    justify-content: center;
+    flex-direction: column;
+    max-width: 200px;
+    margin: 0 auto;
+    height: unset;
+  }
+  .button-col{
+    justify-content: center;
+
+  }
+}
 
 

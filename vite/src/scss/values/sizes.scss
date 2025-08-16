@@ -1,7 +1,23 @@
+@use '../../scss/values/responsive' as responsive;
+
 :root {
   --nav-height: 5rem;
-  --nav-width: 8rem;
-  --footer-height: 8rem;
+  --nav-width: 4rem;
+  --nav-width-open: 10rem;
+
   --app-vertical-padding: 3rem;
   --app-horizontal-padding: 2rem;
+
+  @media (min-width: responsive.$width-m) {
+    --footer-height: 8rem;
+  }
+  @media (max-width: responsive.$width-m) {
+    --footer-height: 12rem;
+    --nav-height: 0rem;
+  }
+  @media (max-width: responsive.$width-s) {
+    --nav-width: 0rem;
+    --nav-height: 0rem;
+    --footer-height: 24rem;
+  }
 }
