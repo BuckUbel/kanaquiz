@@ -16,9 +16,9 @@ function SettingsPage() {
         <div className={"container-col"}>
           <Card>
             {startLevelState[0] !== undefined &&
-              <NumberField state={startLevelState} label={"Start Level for Quiz Mode"} min={1} max={4} info={"0-4"}/>}
+              <NumberField state={startLevelState} label={"Start Level for Quiz Mode"} min={1} max={4} info={"1-4"}/>}
             {endLevelState[0] !== undefined &&
-              <NumberField state={endLevelState} label={"End Level for Quiz Mode"} min={1} max={4} info={"0-4"}/>}
+              <NumberField state={endLevelState} label={"End Level for Quiz Mode"} min={1} max={4} info={"1-4"}/>}
           </Card>
         </div>
         <div className={"container-col"}></div>
